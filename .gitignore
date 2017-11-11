@@ -1,5 +1,8 @@
 node_modules/
 
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> d0857c2d655700eb36adc6d86abaef2cedb14238
 yarn.lock
 yarn-error.log
