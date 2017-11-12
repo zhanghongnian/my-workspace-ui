@@ -1,0 +1,86 @@
+import React, { Component } from 'react';
+import { Layout, Menu, Icon, Badge, Avatar } from 'antd';
+
+import './BasicLayout.less';
+import logo from '../../assets/images/logo.png';
+
+const { Header, Sider, Content, Footer } = Layout;
+const { SubMenu } = Menu;
+
+
+class BasicLayout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapsed: false,  // 边栏收缩状态
+    }
+  }
+
+  render() {
+    return (
+      <Layout className="sider">
+        <Sider
+          collapsed={this.state.collapsed}
+        >
+          <div className='logo'>
+            <img src={logo} alt='logo' />
+            {this.state.collapsed ? '' : <span>my-workspace</span>}
+          </div>
+          <Menu
+            mode="inline"
+            theme="dark"
+            inlineCollapsed={this.state.collapsed}
+          >
+            <Menu.Item key="/dashboard">
+              <Icon type="rocket" />
+              <span>Dashboard</span>
+            </Menu.Item>
+            <SubMenu key="/echarts" title={<span><Icon type="echarts" /><span>ECharts</span></span>}>
+              <Menu.Item key="/echarts/">
+                折线图
+              </Menu.Item>
+              <Menu.Item key="/echarts/process">
+                地图
+              </Menu.Item>
+            </SubMenu>
+            <Menu.Item key="/file_manage">
+              <Icon type="folder" />
+              <span style={{ display: 'inline' }}>
+                文件管理
+                </span>
+            </Menu.Item>
+            <Menu.Item key="/setting">
+              <Icon type="setting" />
+              <span>设置</span>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout>
+          <Header className="header">
+            <Icon
+              className="trigger"
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={() => this.setState({ collapsed: !this.state.collapsed })}
+            />
+            <Menu
+              mode="horizontal"
+              className="right"
+            >
+              <SubMenu title={<span className="avatar"><Avatar>Z</Avatar>zhnliving</span>}>
+                <Menu.Item key="setting"><Icon type="setting" />个人设置</Menu.Item>
+                <Menu.Item key="logout"><Icon type="logout" />退出登录</Menu.Item>
+              </SubMenu>
+            </Menu>
+          </Header>
+          <Content style={{ margin: '0 16px' }}>
+          </Content>
+          <Footer className="footer">
+            my-workspace ©2017 Created by zhnliving
+          </Footer>
+        </Layout>
+      </Layout>
+    )
+  }
+}
+
+export default BasicLayout;
