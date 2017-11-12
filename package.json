@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "my-workspace-ui",
   "version": "1.0.0",
   "description": "my workspace ui",
@@ -36,18 +35,10 @@
   },
   "dependencies": {
     "antd": "^2.13.8",
+    "history": "^4.7.2",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-router": "^4.2.0",
-=======
-  "devDependencies": {
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
-  },
-  "dependencies": {
-    "antd": "3.0.0-beta.6",
-    "react": "^16.1.0",
->>>>>>> d0857c2d655700eb36adc6d86abaef2cedb14238
     "react-router-dom": "^4.2.2"
   }
 }
