@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Badge, Avatar } from 'antd';
+import { store } from '../store';
+import { push } from 'react-router-redux';
 
 import './BasicLayout.less';
 import logo from '../../assets/images/logo.png';
@@ -13,6 +15,16 @@ class BasicLayout extends Component {
     super(props);
     this.state = {
       collapsed: false,  // 边栏收缩状态
+    }
+  }
+
+  menuClick = (e) => {
+    switch(e.key) {
+      case 'logout':
+        store.dispatch(push('/login'));
+        break;
+      default:
+        console.error('wrong menu key');
     }
   }
 
@@ -65,6 +77,7 @@ class BasicLayout extends Component {
             <Menu
               mode="horizontal"
               className="right"
+              onClick={this.menuClick}
             >
               <SubMenu title={<span className="avatar"><Avatar>Z</Avatar>zhnliving</span>}>
                 <Menu.Item key="setting"><Icon type="setting" />个人设置</Menu.Item>
