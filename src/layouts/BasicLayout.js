@@ -4,7 +4,8 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 
-import ExchangeRate from '../components/Echarts/ExchangeRate'
+import ExchangeRate from '../components/Echarts/ExchangeRate';
+import Map from '../components/Echarts/Map';
 
 import './BasicLayout.less';
 import logo from '../../assets/images/logo.png';
@@ -57,7 +58,9 @@ class BasicLayout extends Component {
                 </Link>
               </Menu.Item>
               <Menu.Item key="/echarts/process">
-                地图
+                <Link to="/echarts/map">
+                  地图
+                </Link>
               </Menu.Item>
             </SubMenu>
             <Menu.Item key="/file_manage">
@@ -93,6 +96,7 @@ class BasicLayout extends Component {
           <Content style={{ margin: '0 16px' }}>
             <Switch>
               <Route path="/echarts/line" component={ExchangeRate} />
+              <Route path="/echarts/map" component={Map} />
             </Switch>
           </Content>
           <Footer className="footer">

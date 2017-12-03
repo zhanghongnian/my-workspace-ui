@@ -55,6 +55,9 @@ module.exports = {
         ]
       },
       {
+        test: /\.json$/, loader: 'json'
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {

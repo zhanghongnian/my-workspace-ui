@@ -111,7 +111,9 @@ export default class ExchangeRate extends Component {
     };
     let myChart = echarts.init(this.ID)
 
+    // myChart.showLoading();
     myChart.setOption(option);
+    // myChart.hideLoading();
     window.onresize = function () {
       myChart.resize();
     }
