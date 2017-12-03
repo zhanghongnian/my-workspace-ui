@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon, Badge, Avatar } from 'antd';
+import { Route, Switch, Link } from 'react-router-dom';
 import { store } from '../store';
 import { push } from 'react-router-redux';
+
+import ExchangeRate from '../components/Echarts/ExchangeRate'
 
 import './BasicLayout.less';
 import logo from '../../assets/images/logo.png';
@@ -19,7 +22,7 @@ class BasicLayout extends Component {
   }
 
   menuClick = (e) => {
-    switch(e.key) {
+    switch (e.key) {
       case 'logout':
         store.dispatch(push('/login'));
         break;
@@ -49,7 +52,9 @@ class BasicLayout extends Component {
             </Menu.Item>
             <SubMenu key="/echarts" title={<span><Icon type="echarts" /><span>ECharts</span></span>}>
               <Menu.Item key="/echarts/">
-                折线图
+                <Link to="/echarts/line">
+                  折线图
+                </Link>
               </Menu.Item>
               <Menu.Item key="/echarts/process">
                 地图
@@ -74,7 +79,7 @@ class BasicLayout extends Component {
               type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={() => this.setState({ collapsed: !this.state.collapsed })}
             />
-            <Menu
+            <Menu   // todo Menu 样式不对劲
               mode="horizontal"
               className="right"
               onClick={this.menuClick}
@@ -86,6 +91,9 @@ class BasicLayout extends Component {
             </Menu>
           </Header>
           <Content style={{ margin: '0 16px' }}>
+            <Switch>
+              <Route path="/echarts/line" component={ExchangeRate} />
+            </Switch>
           </Content>
           <Footer className="footer">
             my-workspace ©2017 Created by zhnliving

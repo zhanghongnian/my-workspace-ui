@@ -12,10 +12,10 @@
         "style": true
       }
     ],
-    "transform-runtime",
-    "react-hot-loader/babel",
-    "transform-async-to-generator",
-    "transform-do-expressions",
-    "syntax-do-expressions"
+    "transform-runtime"
+    // "react-hot-loader/babel",
+    // "transform-async-to-generator",
+    // "transform-do-expressions",
+    // "syntax-do-expressions"
   ]
 }

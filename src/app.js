@@ -7,21 +7,23 @@ import { store, history } from './store';
 
 import './app.less';
 
-import Bundle from './lazyLoad';
+// import Bundle from './lazyLoad';
 import BasicLayout from 'bundle-loader?lazy&name=BasicLayout!./layouts/BasicLayout';
 import LoginLayout from 'bundle-loader?lazy&name=LoginLayout!./layouts/LoginLayout';
 
-const createComponent = (component) =>
-  () => {
-    let AsyncComponent = (
-      <Bundle load={component}>
-        {
-          (Async) => Async ? <Async /> : <Spin className="center" tip="Loading module ..." />
-        }
-      </Bundle>
-    )
-    return AsyncComponent;
-  }
+import createComponent from './utils/asyncComponent';
+
+// const createComponent = (component) =>
+//   () => {
+//     let AsyncComponent = (
+//       <Bundle load={component}>
+//         {
+//           (Async) => Async ? <Async /> : <Spin className="center" tip="Loading module ..." />
+//         }
+//       </Bundle>
+//     )
+//     return AsyncComponent;
+//   }
 
 export default class App extends Component {
   render() {

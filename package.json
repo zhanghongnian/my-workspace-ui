@@ -6,7 +6,7 @@
   "repository": "https://github.com/zhanghongnian/my-workspace-ui",
   "author": "zhnliving",
   "scripts": {
-    "start": "webpack-dev-server --open --progress --config webpack/dev.js",
+    "start": "webpack-dev-server --progress --config webpack/dev.js",
     "build": "webpack --progress --config webpack/prod.js"
   },
   "devDependencies": {
@@ -38,6 +38,8 @@
   },
   "dependencies": {
     "antd": "^2.13.8",
+    "axios": "^0.17.1",
+    "echarts": "^3.8.5",
     "history": "^4.7.2",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
