@@ -51,7 +51,7 @@ class BasicLayout extends Component {
               <Icon type="rocket" />
               <span>Dashboard</span>
             </Menu.Item>
-            <SubMenu key="/echarts" title={<span><Icon type="echarts" /><span>ECharts</span></span>}>
+            <SubMenu key="/echarts" title={<span><Icon type="area-chart" /><span>ECharts</span></span>}>
               <Menu.Item key="/echarts/">
                 <Link to="/echarts/line">
                   折线图
